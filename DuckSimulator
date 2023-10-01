@@ -1,0 +1,33 @@
+package practice.oop;
+
+/**
+ *
+ * @author HP
+ */
+import java.util.Scanner;
+
+public class DuckSimulator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose a duck: Mallard, Redhead, or Rubber");
+        String duckType = scanner.nextLine();
+        Duck duck = null;
+        switch (duckType) {
+            case "Mallard":
+                duck = new MallardDuck();
+                break;
+            case "Redhead":
+                duck = new RedheadDuck();
+                break;
+            case "Rubber":
+                duck = new RubberDuck();
+                break;
+            default:
+                System.out.println("Invalid duck type");
+                System.exit(0);
+        }
+        duck.display();
+        duck.performQuack();
+        duck.performFly();
+    }
+}
